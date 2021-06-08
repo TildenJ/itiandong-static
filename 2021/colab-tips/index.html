@@ -1,2 +1,702 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="keywords" content="Hexo Theme Keep"><meta name="description" content="不是博客，是 Tilden Ji 的网络笔记本(误)"><meta name="author" content="Tilden Ji"><title>Google Colaboratory 小技巧 | Tilden&#39;s Notes</title><link rel="stylesheet" href="/css/style.css"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/TildenJ/itiandong-static/images/Corgi.svg"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Mono|Noto+Serif+SC:wght@700&display=swap.css"><script id="hexo-configurations">let KEEP=window.KEEP||{};KEEP.hexo_config={hostname:"itiandong.com",root:"/",language:"zh-CN",path:"search.json"},KEEP.theme_config={toc:{enable:!0,number:!0,expand_all:!1,init_open:!0},style:{primary_color:"#990066",avatar:"https://cdn.jsdelivr.net/gh/TildenJ/itiandong-static/images/avatar.jpg",favicon:"https://cdn.jsdelivr.net/gh/TildenJ/itiandong-static/images/Corgi.svg",article_img_align:"left",left_side_width:"260px",content_max_width:"920px",hover:{shadow:!0,scale:!1},first_screen:{enable:!0,background_img:"https://cdn.jsdelivr.net/gh/TildenJ/itiandong-static/images/bg.jpg",description:"苟有恒，何必三更起五更眠；最无益，莫过一日曝十日寒"},scroll:{progress_bar:{enable:!0},percent:{enable:!0}}},local_search:{enable:!0,preload:!1},code_copy:{enable:!0,style:"default"},pjax:{enable:!0},lazyload:{enable:!0},version:"3.4.2"},KEEP.language_ago={second:"%s 秒前",minute:"%s 分钟前",hour:"%s 小时前",day:"%s 天前",week:"%s 周前",month:"%s 月前",year:"%s 年前"}</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Tilden's Notes" type="application/atom+xml">
-</head><body><div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span> <span class="pjax-progress-icon"><i class="fas fa-circle-notch fa-spin"></i></span></div><main class="page-container"><div class="page-main-content"><div class="page-main-content-top"><header class="header-wrapper"><div class="header-content"><div class="left"><a class="logo-title" href="/">Tilden&#39;s Notes</a></div><div class="right"><div class="pc"><ul class="menu-list"><li class="menu-item"><a href="/">首页</a></li><li class="menu-item"><a href="/archives">归档</a></li><li class="menu-item"><a target="_blank" rel="noopener" href="https://wiki.itiandong.com">知识库</a></li><li class="menu-item"><a href="/links">友链</a></li><li class="menu-item"><a href="/now">现在</a></li><li class="menu-item search search-popup-trigger"><i class="fas fa-search"></i></li></ul></div><div class="mobile"><div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div><div class="icon-item menu-bar"><div class="menu-bar-middle"></div></div></div></div></div><div class="header-drawer"><ul class="drawer-menu-list"><li class="drawer-menu-item flex-center"><a href="/">首页</a></li><li class="drawer-menu-item flex-center"><a href="/archives">归档</a></li><li class="drawer-menu-item flex-center"><a target="_blank" rel="noopener" href="https://wiki.itiandong.com">知识库</a></li><li class="drawer-menu-item flex-center"><a href="/links">友链</a></li><li class="drawer-menu-item flex-center"><a href="/now">现在</a></li></ul></div><div class="window-mask"></div></header></div><div class="page-main-content-middle"><div class="main-content"><div class="fade-in-down-animation"><div class="article-content-container"><div class="article-title"><span class="title-hover-animation">Google Colaboratory 小技巧</span></div><div class="article-header"><div class="avatar"><img src="https://cdn.jsdelivr.net/gh/TildenJ/itiandong-static/images/avatar.jpg"></div><div class="info"><div class="author"><span class="name">Tilden Ji</span> <span class="author-label">菜鸟Lv1</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fas fa-edit"></i>&nbsp;2021-05-14 08:22:13 </span><span class="article-categories article-meta-item"><i class="fas fa-folder"></i>&nbsp;<ul><li><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;</li><li>&gt; <a href="/categories/%E6%8A%80%E6%9C%AF/Colab/">Colab</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fas fa-tags"></i>&nbsp;<ul><li><a href="/tags/Colab/">Colab</a>&nbsp;</li><li>| <a href="/tags/%E5%AE%9E%E9%AA%8C/">实验</a>&nbsp;</li><li>| <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fas fa-file-word"></i>&nbsp;<span>972 字</span> </span><span class="article-min2read article-meta-item"><i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span> </span><span class="article-pv article-meta-item"><i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body"><p>最近在用 <code>Google Colaboratory</code> 跑实验，开一贴用来记录、整理一些使用过程中发现的小技巧。不定期更新。</p><span id="more"></span><h1 id="修订记录"><a href="#修订记录" class="headerlink" title="修订记录"></a>修订记录</h1><ul><li>2021年5月14日 初版目录</li></ul><h1 id="白嫖无限盘存储数据集"><a href="#白嫖无限盘存储数据集" class="headerlink" title="白嫖无限盘存储数据集"></a>白嫖无限盘存储数据集</h1><p>Colab 是可以挂载 Google Drive 来导入训练需要的数据集的，但 Google Drive 只有 15Gb 的免费空间，稍微多放几个数据集空间就不够用了。为了解决这个问题，你当然可以直接花钱购买存储空间，100Gb 空间的价格差不多是 2 美元一个月。但鉴于数据集也不是啥隐私数据<del>（主要是穷）</del>，于是我就找了些免费的团队盘来存储。团队盘大概是谷歌云盘的企业方案提供的功能，企业可以建立一个独立的团队盘，无空间限制并且可以自由添加管理员或者内容管理者。团队盘和云盘用起来没啥区别，都可以挂载到 Colab 里，<strong>但并不稳定（可能会被企业回收）且企业管理员可以看到所有团队盘的内容，所以不要在里面放任何隐私文件！</strong></p><p>至于如何申请到免费的团队盘，我随便在 Youtube 上搜到了一个视频教程，里面给出了一些网址如下图。其中我只试了第一个网址就成功申请到了：</p><img style="max-width:50%" src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/TildenJ/pics@pics/images/2021/05/20210514102217_7710129949e62bd3ea8a40b6d422a267.png"><h1 id="免费账户使用高内存高算力GPU"><a href="#免费账户使用高内存高算力GPU" class="headerlink" title="免费账户使用高内存高算力GPU"></a>免费账户使用高内存高算力GPU</h1><p>之前在推特上刷到一个免费用户白嫖 <code>P100</code> 的推文，只要使用指定的 <code>ipynb</code> 文件就能申请到 P100。当时看到也第一时间尝试了一下，果然可以 100% 申请到 P100，而且还是高内存机器！笔记本地址：<a class="link" target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1D6krVG0PPJR2Je9g5eN_2h6JP73_NUXz">P100.ipynb<i class="fas fa-external-link-alt"></i></a>。</p><p>不过我最近也没有这样用过了，<strong>也不知道现在（2021年5月14日）这个方法还能不能稳定使用</strong>，刚尝试了一次，申请到的是较弱的 Tesla T4。 至于为啥我最近没有这样用了，因为… 我氪金上 <code>Colab Pro</code>了（手动狗头）</p><img src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/TildenJ/pics@pics/images/2021/05/20210514095902_47b4f2e7d8f2b8be1d284a07e010d84e.png" style="max-width:50%"><h1 id="在-Colaboratory-中运行-Shell-命令"><a href="#在-Colaboratory-中运行-Shell-命令" class="headerlink" title="在 Colaboratory 中运行 Shell 命令"></a>在 Colaboratory 中运行 Shell 命令</h1><p>Colab 实际上是一个在线的 <code>Jupyter notebook</code>，在 notebook 里，可以在命令行前加上”!”执行 Shell 命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!pip install xxx</span><br></pre></td></tr></table></figure><p>但这样是存在缺陷的，当通过这种方式执行命令时，脚本会在一个临时的 SubShell 里执行，所以譬如运行 <code>!cd EpicWord</code> 的命令时是没有达到预期效果的（当然这里可以用 <a class="link" target="_blank" rel="noopener" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">magic methods<i class="fas fa-external-link-alt"></i></a> <code>%cd</code> 改变工作目录，或者直接用 <a class="link" target="_blank" rel="noopener" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html?highlight=automagic#magic-automagic">automagic methods<i class="fas fa-external-link-alt"></i></a> <code>cd</code>，后文也会提到）。一个优雅地运行 Shell 命令的方式是使用工具函数 <code>run</code>，该函数接受命令列表和工作路径，创建对应的 sh 脚本，自动 cd 到工作目录并按顺序执行命令：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;Helper to run command formated in python.&quot;&quot;&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">cmds, root=<span class="string">&quot;/content&quot;</span></span>):</span></span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">isinstance</span>(cmds, <span class="built_in">list</span>):</span><br><span class="line">    cmds = [cmds]</span><br><span class="line">  os.system(<span class="string">f&quot;echo cd <span class="subst">&#123;root&#125;</span> &gt; cmd.sh&quot;</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> cmd <span class="keyword">in</span> cmds:</span><br><span class="line">    os.system(<span class="string">f&quot;echo <span class="subst">&#123;cmd&#125;</span> &gt;&gt; cmd.sh&quot;</span>)</span><br><span class="line">  !bash cmd.sh</span><br></pre></td></tr></table></figure><p>用起来非常方便，一些例子如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 GPU 信息</span></span><br><span class="line">run(<span class="string">&quot;nvidia-smi&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压准备数据集</span></span><br><span class="line">run([</span><br><span class="line">     <span class="string">f&#x27;tar -xf <span class="subst">&#123;mini_imagenet_tar_dir&#125;</span>/train.tar -C <span class="subst">&#123;ds_target_dir&#125;</span>&#x27;</span>,</span><br><span class="line">     <span class="string">f&#x27;tar -xf <span class="subst">&#123;mini_imagenet_tar_dir&#125;</span>/test.tar -C <span class="subst">&#123;ds_target_dir&#125;</span>&#x27;</span>,</span><br><span class="line">     <span class="string">f&#x27;tar -xf <span class="subst">&#123;mini_imagenet_tar_dir&#125;</span>/val.tar -C <span class="subst">&#123;ds_target_dir&#125;</span>&#x27;</span>,</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新实验代码</span></span><br><span class="line">run(<span class="string">&quot;git pull&quot;</span>, <span class="string">f&quot;/content/<span class="subst">&#123;repository&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行模型代码</span></span><br><span class="line">run(</span><br><span class="line">    <span class="string">r&#x27;python train_fsl.py --save_dir /content/drive/MyDrive/savedirs  --max_epoch 200 ...&#x27;</span>,</span><br><span class="line">    <span class="string">f&quot;/content/<span class="subst">&#123;repository&#125;</span>&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>这种方式可以满足大部分运行命令行的需求，顺带提一句，如果你想在当前笔记本的 IPython 环境里运行 Python 代码，可以这样做：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">%cd EpicWork</span><br><span class="line">%run main.py</span><br></pre></td></tr></table></figure><h1 id="使用-Github-私人仓库托管代码"><a href="#使用-Github-私人仓库托管代码" class="headerlink" title="使用 Github 私人仓库托管代码"></a>使用 Github 私人仓库托管代码</h1><h1 id="使用-Tensorboard-监控实验状态"><a href="#使用-Tensorboard-监控实验状态" class="headerlink" title="使用 Tensorboard 监控实验状态"></a>使用 Tensorboard 监控实验状态</h1><h1 id="Telegram-推送训练日志"><a href="#Telegram-推送训练日志" class="headerlink" title="Telegram 推送训练日志"></a>Telegram 推送训练日志</h1></div><div class="post-copyright-info"><div class="article-copyright-info-container"><ul><li>本文标题：Google Colaboratory 小技巧</li><li>本文作者：Tilden Ji</li><li>创建时间：2021-05-14 08:22:13</li><li>本文链接：https://itiandong.com/2021/colab-tips/</li><li>版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div></div><div class="article-nav"><div class="article-prev"><a class="prev" rel="prev" href="/2021/automating-blog-deployment-with-jenkins-and-gitee/"><span class="left arrow-icon flex-center"><i class="fas fa-chevron-left"></i> </span><span class="title flex-center"><span class="post-nav-title-item">使用 Jenkins 和 Gitee 自动部署博客</span> <span class="post-nav-item">上一篇</span></span></a></div><div class="article-next"><a class="next" rel="next" href="/2021/paper-OPL/"><span class="title flex-center"><span class="post-nav-title-item">论文笔记：Orthogonal Projection Loss</span> <span class="post-nav-item">下一篇</span> </span><span class="right arrow-icon flex-center"><i class="fas fa-chevron-right"></i></span></a></div></div><div class="comment-container"><div class="comments-container"><div id="comment-anchor"></div><div class="comment-area-title"><i class="fas fa-comments">&nbsp;评论</i></div><div id="gitalk-container"></div><script data-pjax src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script><script data-pjax>function loadGitalk(){let e=decodeURI(location.pathname);e.length>50&&(e=e.substring(0,47)+"...");try{Gitalk&&new Gitalk({clientID:"b43563fd65235b4aa733",clientSecret:"78e273656270cb293a00766d37dd1b7027384ac9",repo:"tilden-notes-gitalk",owner:"TildenJ",admin:["TildenJ"],id:e,language:"zh-CN"}).render("gitalk-container")}catch(e){window.Gitalk=null}}{const e=setTimeout(()=>{loadGitalk(),clearTimeout(e)},1e3)}</script></div></div></div></div></div></div><div class="page-main-content-bottom"><footer class="footer"><div class="info-container"><div class="copyright-info info-item">&copy; <span>2021</span>&nbsp;-&nbsp; 2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Tilden Ji</a></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="website-count info-item"><span id="busuanzi_container_site_uv">访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp; </span><span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span></div><div class="theme-info info-item">引擎： <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;基于：&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep 3.4.2</a></div><div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">辽ICP备2021005263号</a></div></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="tools-list"><li class="tools-item page-aside-toggle"><i class="fas fa-outdent"></i></li><li class="go-comment"><i class="fas fa-comment"></i></li></ul></div></div><div class="right-bottom-side-tools"><div class="side-tools-container"><ul class="side-tools-list"><li class="tools-item tool-font-adjust-plus flex-center"><i class="fas fa-search-plus"></i></li><li class="tools-item tool-font-adjust-minus flex-center"><i class="fas fa-search-minus"></i></li><li class="tools-item tool-expand-width flex-center"><i class="fas fa-arrows-alt-h"></i></li><li class="tools-item tool-dark-light-toggle flex-center"><i class="fas fa-moon"></i></li><li class="tools-item rss flex-center"><a class="flex-center" href="/atom.xml" target="_blank"><i class="fas fa-rss"></i></a></li><li class="tools-item tool-scroll-to-bottom flex-center"><i class="fas fa-arrow-down"></i></li></ul><ul class="exposed-tools-list"><li class="tools-item tool-toggle-show flex-center"><i class="fas fa-cog fa-spin"></i></li><li class="tools-item tool-scroll-to-top flex-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><aside class="page-aside"><div class="post-toc-wrap"><div class="post-toc"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E8%AE%A2%E8%AE%B0%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">修订记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BD%E5%AB%96%E6%97%A0%E9%99%90%E7%9B%98%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">2.</span> <span class="nav-text">白嫖无限盘存储数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%8D%E8%B4%B9%E8%B4%A6%E6%88%B7%E4%BD%BF%E7%94%A8%E9%AB%98%E5%86%85%E5%AD%98%E9%AB%98%E7%AE%97%E5%8A%9BGPU"><span class="nav-number">3.</span> <span class="nav-text">免费账户使用高内存高算力GPU</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8-Colaboratory-%E4%B8%AD%E8%BF%90%E8%A1%8C-Shell-%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">在 Colaboratory 中运行 Shell 命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Github-%E7%A7%81%E4%BA%BA%E4%BB%93%E5%BA%93%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">使用 Github 私人仓库托管代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Tensorboard-%E7%9B%91%E6%8E%A7%E5%AE%9E%E9%AA%8C%E7%8A%B6%E6%80%81"><span class="nav-number">6.</span> <span class="nav-text">使用 Tensorboard 监控实验状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Telegram-%E6%8E%A8%E9%80%81%E8%AE%AD%E7%BB%83%E6%97%A5%E5%BF%97"><span class="nav-number">7.</span> <span class="nav-text">Telegram 推送训练日志</span></a></li></ol></div></div></aside><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-input-field-pre"><i class="fas fa-keyboard"></i></span><div class="search-input-container"><input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close"><i class="fas fa-times"></i></span></div><div id="search-result"><div id="no-result"><i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i></div></div></div></div></main><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script><script src="/js/medium-zoom.min.js"></script><script src="/js/local-search.js"></script><script src="/js/code-copy.js"></script><div class="footnotes pjax"></div><script src="/js/lazyload.min.js"></script><script src="/js/lazyload.js"></script><div class="post-scripts pjax"><script src="/js/left-side-toggle.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/toc.js"></script></div><script src="/js/libs/pjax.min.js"></script><script>window.addEventListener("DOMContentLoaded",()=>{window.pjax=new Pjax({selectors:["head title",".page-container",".pjax"],history:!0,debug:!1,cacheBust:!1,timeout:0,analytics:!1,currentUrlFullReload:!1,scrollRestoration:!0}),window.pjaxOpenUrl=e=>pjax.loadUrl(e),document.addEventListener("pjax:send",()=>{KEEP.utils.pjaxProgressBarStart()}),document.addEventListener("pjax:complete",()=>{KEEP.utils.pjaxProgressBarEnd(),window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")),KEEP.refresh()})})</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="不是博客，是 Tilden Ji 的网络笔记本(误)">
+    <meta name="author" content="Tilden Ji">
+    
+    <title>
+        
+            Google Colaboratory 小技巧 |
+        
+        Tilden&#39;s Notes
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/TildenJ/itiandong-static/images/Corgi.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Code|Noto+Serif+SC:wght@700&display=swap.css">
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/TildenJ/itiandong-static/css/perspective-extreme.css">
+
+    
+<link rel="stylesheet" href="/css/footnote.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"itiandong.com","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#990066","avatar":"https://cdn.jsdelivr.net/gh/TildenJ/itiandong-static/images/avatar.jpg","favicon":"https://cdn.jsdelivr.net/gh/TildenJ/itiandong-static/images/Corgi.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"https://cdn.jsdelivr.net/gh/TildenJ/itiandong-static/images/bg.jpg","description":"苟有恒，何必三更起五更眠；最无益，莫过一日曝十日寒"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Tilden's Notes" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">Tilden&#39;s Notes</a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://xiaoyan.moe"
+                            >
+                                ❤
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://wiki.itiandong.com"
+                            >
+                                知识库
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/now"
+                            >
+                                现在
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://xiaoyan.moe">❤</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://wiki.itiandong.com">知识库</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/now">现在</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Google Colaboratory 小技巧</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://cdn.jsdelivr.net/gh/TildenJ/itiandong-static/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Tilden Ji</span>
+                        
+                            <span class="author-label">菜鸟Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-05-14 08:22:13
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E6%8A%80%E6%9C%AF/Colab/">Colab</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Colab/">Colab</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%AE%9E%E9%AA%8C/">实验</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>965 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>最近在用 <code>Google Colaboratory</code> 跑实验，开一贴用来记录、整理一些使用过程中发现的小技巧。不定期更新。</p>
+<span id="more"></span>
+
+<h1 id="修订记录"><a href="#修订记录" class="headerlink" title="修订记录"></a>修订记录</h1><ul>
+<li>2021年5月14日 初版目录</li>
+</ul>
+<h1 id="白嫖无限盘存储数据集"><a href="#白嫖无限盘存储数据集" class="headerlink" title="白嫖无限盘存储数据集"></a>白嫖无限盘存储数据集</h1><p>Colab 是可以挂载 Google Drive 来导入训练需要的数据集的，但 Google Drive 只有 15Gb 的免费空间，稍微多放几个数据集空间就不够用了。为了解决这个问题，你当然可以直接花钱购买存储空间，100Gb 空间的价格差不多是 2 美元一个月。但鉴于数据集也不是啥隐私数据<del>（主要是穷）</del>，于是我就找了些免费的团队盘来存储。团队盘大概是谷歌云盘的企业方案提供的功能，企业可以建立一个独立的团队盘，无空间限制并且可以自由添加管理员或者内容管理者。团队盘和云盘用起来没啥区别，都可以挂载到 Colab 里，<strong>但并不稳定（可能会被企业回收）且企业管理员可以看到所有团队盘的内容，所以不要在里面放任何隐私文件！</strong></p>
+<p>至于如何申请到免费的团队盘。在 Youtube 上搜到了一个视频教程，里面给出了一些网址如下图，只试了第一个网址就成功申请到了：</p>
+<img   
+                     src="/images/loading.svg"
+                     style="max-width: 50%"
+                     data-src="https://cdn.jsdelivr.net/gh/TildenJ/pics@pics/images/2021/05/20210514102217_7710129949e62bd3ea8a40b6d422a267.png"
+                     
+                >
+
+
+
+<h1 id="免费账户使用高内存高算力GPU"><a href="#免费账户使用高内存高算力GPU" class="headerlink" title="免费账户使用高内存高算力GPU"></a>免费账户使用高内存高算力GPU</h1><p>之前在推特上刷到一个免费用户白嫖 <code>P100</code> 的推文，只要使用指定的 <code>ipynb</code> 文件就能申请到 P100。当时看到也第一时间尝试了一下，果然可以 100% 申请到 P100，而且还是高内存机器！笔记本地址：<a class="link"   target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1D6krVG0PPJR2Je9g5eN_2h6JP73_NUXz" >P100.ipynb<i class="fas fa-external-link-alt"></i></a>。</p>
+<p>不过我最近也没有这样用过了，<strong>也不知道现在（2021年5月14日）这个方法还能不能稳定使用</strong>，刚尝试了一次，申请到的是较弱的 Tesla T4。 至于为啥最近没有这样用了，因为… 我氪金上 <code>Colab Pro</code>了（手动狗头）</p>
+<img  
+                     src="/images/loading.svg"
+                     style="max-width: 50%"
+                     data-src="https://cdn.jsdelivr.net/gh/TildenJ/pics@pics/images/2021/05/20210514095902_47b4f2e7d8f2b8be1d284a07e010d84e.png"
+                      style="max-width: 50%" 
+                >
+
+<h1 id="在-Colaboratory-中运行-Shell-命令"><a href="#在-Colaboratory-中运行-Shell-命令" class="headerlink" title="在 Colaboratory 中运行 Shell 命令"></a>在 Colaboratory 中运行 Shell 命令</h1><p>Colab 实际上是一个在线的 <code>Jupyter notebook</code>，在 notebook 里，可以在命令行前加上”!”执行 Shell 命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!pip install xxx</span><br></pre></td></tr></table></figure>
+
+<p>但这样是存在缺陷的，当通过这种方式执行命令时，脚本会在一个临时的 SubShell 里执行，所以譬如运行 <code>!cd EpicWord</code> 的命令时是没有达到预期效果的（当然这里可以用 <a class="link"   target="_blank" rel="noopener" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html" >magic methods<i class="fas fa-external-link-alt"></i></a> <code>%cd</code> 改变工作目录，或者直接用 <a class="link"   target="_blank" rel="noopener" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html?highlight=automagic#magic-automagic" >automagic methods<i class="fas fa-external-link-alt"></i></a> <code>cd</code>，后文也会提到）。一个优雅地运行 Shell 命令的方式是使用工具函数 <code>run</code>，该函数接受命令列表和工作路径，创建对应的 sh 脚本，自动 cd 到工作目录并按顺序执行命令：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;Helper to run command formated in python.&quot;&quot;&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">cmds, root=<span class="string">&quot;/content&quot;</span></span>):</span></span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">isinstance</span>(cmds, <span class="built_in">list</span>):</span><br><span class="line">    cmds = [cmds]</span><br><span class="line">  os.system(<span class="string">f&quot;echo cd <span class="subst">&#123;root&#125;</span> &gt; cmd.sh&quot;</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> cmd <span class="keyword">in</span> cmds:</span><br><span class="line">    os.system(<span class="string">f&quot;echo <span class="subst">&#123;cmd&#125;</span> &gt;&gt; cmd.sh&quot;</span>)</span><br><span class="line">  !bash cmd.sh</span><br></pre></td></tr></table></figure>
+
+<p>用起来非常方便，一些例子如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 GPU 信息</span></span><br><span class="line">run(<span class="string">&quot;nvidia-smi&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压准备数据集</span></span><br><span class="line">run([</span><br><span class="line">     <span class="string">f&#x27;tar -xf <span class="subst">&#123;mini_imagenet_tar_dir&#125;</span>/train.tar -C <span class="subst">&#123;ds_target_dir&#125;</span>&#x27;</span>,</span><br><span class="line">     <span class="string">f&#x27;tar -xf <span class="subst">&#123;mini_imagenet_tar_dir&#125;</span>/test.tar -C <span class="subst">&#123;ds_target_dir&#125;</span>&#x27;</span>,</span><br><span class="line">     <span class="string">f&#x27;tar -xf <span class="subst">&#123;mini_imagenet_tar_dir&#125;</span>/val.tar -C <span class="subst">&#123;ds_target_dir&#125;</span>&#x27;</span>,</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新实验代码</span></span><br><span class="line">run(<span class="string">&quot;git pull&quot;</span>, <span class="string">f&quot;/content/<span class="subst">&#123;repository&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行模型代码</span></span><br><span class="line">run(</span><br><span class="line">    <span class="string">r&#x27;python train_fsl.py --save_dir /content/drive/MyDrive/savedirs  --max_epoch 200 ...&#x27;</span>,</span><br><span class="line">    <span class="string">f&quot;/content/<span class="subst">&#123;repository&#125;</span>&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>这种方式可以满足大部分运行命令行的需求，顺带提一句，如果你想在当前笔记本的 IPython 环境里运行 Python 代码，可以这样做：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">%cd EpicWork</span><br><span class="line">%run main.py</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用-Github-私人仓库托管代码"><a href="#使用-Github-私人仓库托管代码" class="headerlink" title="使用 Github 私人仓库托管代码"></a>使用 Github 私人仓库托管代码</h1><h1 id="使用-Tensorboard-监控实验状态"><a href="#使用-Tensorboard-监控实验状态" class="headerlink" title="使用 Tensorboard 监控实验状态"></a>使用 Tensorboard 监控实验状态</h1><h1 id="Telegram-推送训练日志"><a href="#Telegram-推送训练日志" class="headerlink" title="Telegram 推送训练日志"></a>Telegram 推送训练日志</h1>
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：Google Colaboratory 小技巧</li>
+        <li>本文作者：Tilden Ji</li>
+        <li>创建时间：2021-05-14 08:22:13</li>
+        <li>
+            本文链接：https://itiandong.com/2021/colab-tips/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/automating-blog-deployment-with-jenkins-and-gitee/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">使用 Jenkins 和 Gitee 自动部署博客</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/paper-OPL/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">论文笔记：Orthogonal Projection Loss</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-pjax
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script data-pjax>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'b43563fd65235b4aa733',
+                    clientSecret: '78e273656270cb293a00766d37dd1b7027384ac9',
+                    repo: 'tilden-notes-gitalk',
+                    owner: 'TildenJ',
+                    admin: ['TildenJ'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Tilden Ji</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            引擎： <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;基于：&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep 3.4.2</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow noopener noreferrer" href="https://beian.miit.gov.cn">辽ICP备2021005263号</a></div>
+        
+        <div style="width:300px;margin:0 auto; padding:0 0;">
+            <a target="_blank" rel="nofollow noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21021702000530" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="https://cdn.jsdelivr.net/gh/TildenJ/pics@pics/images/2021/06/%E5%A4%87%E6%A1%88%E5%9B%BE%E6%A0%87_d0289dc0a46fc5b15b3363ffa78cf6c7.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px;">辽公网安备 21021702000530号</p></a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E8%AE%A2%E8%AE%B0%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">修订记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BD%E5%AB%96%E6%97%A0%E9%99%90%E7%9B%98%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">2.</span> <span class="nav-text">白嫖无限盘存储数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%8D%E8%B4%B9%E8%B4%A6%E6%88%B7%E4%BD%BF%E7%94%A8%E9%AB%98%E5%86%85%E5%AD%98%E9%AB%98%E7%AE%97%E5%8A%9BGPU"><span class="nav-number">3.</span> <span class="nav-text">免费账户使用高内存高算力GPU</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8-Colaboratory-%E4%B8%AD%E8%BF%90%E8%A1%8C-Shell-%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">在 Colaboratory 中运行 Shell 命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Github-%E7%A7%81%E4%BA%BA%E4%BB%93%E5%BA%93%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">使用 Github 私人仓库托管代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Tensorboard-%E7%9B%91%E6%8E%A7%E5%AE%9E%E9%AA%8C%E7%8A%B6%E6%80%81"><span class="nav-number">6.</span> <span class="nav-text">使用 Tensorboard 监控实验状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Telegram-%E6%8E%A8%E9%80%81%E8%AE%AD%E7%BB%83%E6%97%A5%E5%BF%97"><span class="nav-number">7.</span> <span class="nav-text">Telegram 推送训练日志</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+<script src="/js/medium-zoom.min.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="footnotes pjax">
+
+    
+        <!-- 
+<script src="/js/TippyEmpty.js"></script>
+ -->
+    
+</div>
+
+
+
+    
+<script src="/js/lazyload.min.js"></script>
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: true,
+            // scrollTo: true,
+        });
+
+        window.pjaxOpenUrl = (url) => pjax.loadUrl(url);
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+
+        // document.addEventListener('pjax:complete', () => {
+
+        // });
+    });
+</script>
+
+
+
+</body>
+</html>

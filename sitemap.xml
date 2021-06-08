@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://itiandong.com/2019/fix-for-grub-error-unknown-filesystem/</loc>
+    
+    <lastmod>2021-06-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/2021/paper-learning-from-JPEG/</loc>
+    
+    <lastmod>2021-06-08</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://itiandong.com/2021/automating-blog-deployment-with-jenkins-and-gitee/</loc>
     
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/2021/paper-OPL/</loc>
+    
+    <lastmod>2021-06-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/2021/footnotes-test/</loc>
+    
+    <lastmod>2021-06-08</lastmod>
     
   </url>
   
@@ -12,20 +40,6 @@
     <loc>https://itiandong.com/now/</loc>
     
     <lastmod>2021-05-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/2019/fix-for-grub-error-unknown-filesystem/</loc>
-    
-    <lastmod>2021-05-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/2021/footnotes-test/</loc>
-    
-    <lastmod>2021-05-14</lastmod>
     
   </url>
   
@@ -38,13 +52,6 @@
   
   <url>
     <loc>https://itiandong.com/about/</loc>
-    
-    <lastmod>2021-04-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/2021/paper-OPL/</loc>
     
     <lastmod>2021-04-28</lastmod>
     
@@ -88,7 +95,7 @@
 
   <url>
     <loc>https://itiandong.com/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -96,119 +103,140 @@
   
   <url>
     <loc>https://itiandong.com/tags/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://itiandong.com/tags/%E5%B0%8F%E6%A0%B7%E6%9C%AC/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/tags/grub/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/tags/manjaro/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/tags/uefi/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://itiandong.com/tags/Hexo/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/tags/%E8%84%9A%E6%A0%87/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/tags/Colab/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/tags/%E5%AE%9E%E9%AA%8C/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://itiandong.com/tags/CI/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://itiandong.com/tags/Jenkins/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://itiandong.com/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://itiandong.com/tags/%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/tags/Colab/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/tags/%E5%AE%9E%E9%AA%8C/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/tags/%E8%84%9A%E6%A0%87/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</loc>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://itiandong.com/tags/Hello-World/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://itiandong.com/tags/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/tags/JPEG/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/tags/DCT/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/tags/%E5%9B%BE%E5%83%8F%E7%89%B9%E5%BE%81/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/tags/grub/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/tags/manjaro/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/tags/uefi/</loc>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -217,49 +245,56 @@
   
   <url>
     <loc>https://itiandong.com/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://itiandong.com/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/categories/%E6%8A%80%E6%9C%AF/grub/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/categories/%E6%8A%80%E6%9C%AF/Hexo/</loc>
-    <lastmod>2021-05-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itiandong.com/categories/%E6%8A%80%E6%9C%AF/Colab/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://itiandong.com/categories/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://itiandong.com/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2021-05-24</lastmod>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/categories/%E6%8A%80%E6%9C%AF/Hexo/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%83%8F%E7%89%B9%E5%BE%81/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/categories/%E6%8A%80%E6%9C%AF/grub/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itiandong.com/categories/%E6%8A%80%E6%9C%AF/Colab/</loc>
+    <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

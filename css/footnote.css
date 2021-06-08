@@ -1,1 +1,34 @@
-.footnoteAnchorShift{position:relative;top:-3em;height:0;overflow:hidden}.footnote-link{margin-left:.3em}.footnote-btn{color:var(--default-text-color);margin-left:.2em;margin-right:.4em;user-select:none}.footnotecontainer>div{display:flex}.fnItem{margin-left:.3em;margin-bottom:.5em}.footnote-icon{font-weight:700}
+.footnoteAnchorShift {
+  position: relative;
+  top: -3em;
+  height: 0;
+  overflow: hidden
+}
+
+.footnote-link {
+  margin-left: 0.3em;
+}
+
+.footnote-btn {
+  color: var(--default-text-color);
+  margin-left: 0.2em;
+  margin-right: 0.4em;
+  user-select: none;
+}
+
+.footnotecontainer > div {
+  display: flex;
+}
+
+.fnIdx {
+}
+
+.fnItem {
+  margin-left: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+
+.footnote-icon {
+  font-weight: bold;
+}
