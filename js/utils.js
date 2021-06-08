@@ -203,7 +203,7 @@ KEEP.initUtils = () => {
     // init first screen height
     initFirstScreenHeight() {
       window.onresize = () => {
-        this.firstScreen_dom.style.height = window.innerHeight + 'px'
+        this.firstScreen_dom && (this.firstScreen_dom.style.height = window.innerHeight + 'px')
       }
       this.firstScreen_dom && (this.firstScreen_dom.style.height = this.innerHeight + 'px');
     },
